@@ -2,7 +2,7 @@
   description = ".NET8 tool chain";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
   };
 
   outputs = { self, nixpkgs }@inputs:
@@ -20,8 +20,9 @@
           netcoredbg
           azure-functions-core-tools
           (with dotnetCorePackages; combinePackages [
-            sdk_6_0_1xx # need for function cli???
+            # sdk_6_0_1xx # need for function cli???
             sdk_8_0_1xx
+            sdk_9_0_1xx
           ])
         ];
 
